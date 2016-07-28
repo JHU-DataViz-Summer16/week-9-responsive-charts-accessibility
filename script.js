@@ -76,6 +76,9 @@ function Chart(selector) {
     .append('g')
     .attr('transform', 'translate(' + chart.margin.left + ',' + chart.margin.top + ')');
 
+  chart.svg.append('title')
+    .text('Countries by fertility (in births per woman) and life expectancy (in years)');
+
   // SCALES
 
   chart.x = d3.scaleLinear()
