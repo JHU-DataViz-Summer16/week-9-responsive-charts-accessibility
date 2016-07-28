@@ -36,7 +36,7 @@ app = {
     // Add event listeners and the like here
 
     // app.resize() will be called anytime the page size is changed
-    d3.select('window').on('resize', app.resize);
+    d3.select(window).on('resize', app.resize);
 
     // For demo purposes, let's tick the year every 750ms
     function incrementYear() {
