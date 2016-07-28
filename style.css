@@ -16,3 +16,11 @@ img {
   display: block;
   margin: 0 auto;
 }
+
+svg text {
+    fill: #333;
+}
+
+.axis path, .axis line {
+    stroke: #333;
+}

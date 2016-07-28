@@ -108,7 +108,6 @@ function Chart(selector) {
   chart.xLabel = chart.gx.append('text')
     .attr('y', 30)
     .style('text-anchor', 'end')
-    .style('fill', '#000')
     .style('font-weight', 'bold')
     .text('Fertility (births per woman)');
 
@@ -121,7 +120,6 @@ function Chart(selector) {
     .attr('y', -35)
     .attr('x', 0)
     .style('text-anchor', 'end')
-    .style('fill', '#000')
     .style('font-weight', 'bold')
     .text('Life expectancy (years)');
 
