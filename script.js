@@ -204,8 +204,8 @@ Chart.prototype = {
       .sort(function (a, b) { return b.population - a.population; })
       .attr('title', function (d) {
         return d.country +
-        ', fertility: ' + d.total_fertility +
-        ', life expectancy: ' + d.life_expectancy;
+        ', fertility: ' + ONE_DECIMAL_FORMAT(d.total_fertility) +
+        ', life expectancy: ' + ONE_DECIMAL_FORMAT(d.life_expectancy);
       })
       .transition(t)
       .attr('r', function (d) { return chart.r(d.population); })
