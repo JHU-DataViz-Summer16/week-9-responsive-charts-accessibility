@@ -105,11 +105,10 @@ function Chart(selector) {
   chart.yAxis = d3.axisLeft()
     .scale(chart.y);
 
-  chart.svg.append('g')
-    .attr('class', 'x axis')
-    .attr('transform', 'translate(0,' + chart.height + ')')
-    .call(chart.xAxis)
-    .append('text')
+  chart.gx = chart.svg.append('g')
+    .attr('class', 'x axis');
+
+  chart.gx.append('text')
     .attr('y', 30)
     .attr('x', chart.width)
     .style('text-anchor', 'end')
@@ -117,10 +116,10 @@ function Chart(selector) {
     .style('font-weight', 'bold')
     .text('Fertility (births per woman)');
 
-  chart.svg.append('g')
-    .attr('class', 'y axis')
-    .call(chart.yAxis)
-    .append('text')
+  chart.gy = chart.svg.append('g')
+    .attr('class', 'y axis');
+
+  chart.gy.append('text')
     .attr('transform', 'rotate(-90)')
     .attr('dy', '.71em')
     .attr('y', -35)
@@ -158,6 +157,13 @@ Chart.prototype = {
     chart.parentEl.select('svg')
       .attr('width', chart.width + chart.margin.left + chart.margin.right)
       .attr('height', chart.height + chart.margin.top + chart.margin.bottom);
+
+    chart.x.range([0, chart.width]);
+    chart.y.range([chart.height, 0]);
+
+    chart.gx.call(chart.xAxis)
+      .attr('transform', 'translate(0,' + chart.height + ')');
+    chart.gy.call(chart.yAxis);
 
     chart.update();
   },
