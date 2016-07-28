@@ -202,6 +202,11 @@ Chart.prototype = {
       .attr('cy', chart.height / 2)
       .merge(countries)
       .sort(function (a, b) { return b.population - a.population; })
+      .attr('title', function (d) {
+        return d.country +
+        ', fertility: ' + d.total_fertility +
+        ', life expectancy: ' + d.life_expectancy;
+      })
       .transition(t)
       .attr('r', function (d) { return chart.r(d.population); })
       .attr('cx', function (d) { return chart.x(d.total_fertility); })
