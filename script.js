@@ -108,9 +108,8 @@ function Chart(selector) {
   chart.gx = chart.svg.append('g')
     .attr('class', 'x axis');
 
-  chart.gx.append('text')
+  chart.xLabel = chart.gx.append('text')
     .attr('y', 30)
-    .attr('x', chart.width)
     .style('text-anchor', 'end')
     .style('fill', '#000')
     .style('font-weight', 'bold')
@@ -131,13 +130,10 @@ function Chart(selector) {
 
   // YEAR LABEL
 
-  chart.svg.append('text')
+  chart.yearLabel = chart.svg.append('text')
     .attr('class', 'year')
-    .attr('x', chart.width / 2)
-    .attr('y', chart.height / 2)
     .attr('dy', '.35em')
     .style('text-anchor', 'middle')
-    .style('font-size', '230px')
     .style('font-weight', 'bold')
     .style('opacity', 0.2)
     .text(app.options.year);
@@ -164,6 +160,13 @@ Chart.prototype = {
     chart.gx.call(chart.xAxis)
       .attr('transform', 'translate(0,' + chart.height + ')');
     chart.gy.call(chart.yAxis);
+
+    chart.xLabel.attr('x', chart.width);
+
+    chart.yearLabel
+      .attr('x', chart.width / 2)
+      .attr('y', chart.height / 2)
+      .style('font-size', chart.width / 3);
 
     chart.update();
   },
