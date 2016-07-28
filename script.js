@@ -106,7 +106,8 @@ function Chart(selector) {
     .scale(chart.y);
 
   chart.gx = chart.svg.append('g')
-    .attr('class', 'x axis');
+    .attr('class', 'x axis')
+    .attr('aria-hidden', true);
 
   chart.xLabel = chart.gx.append('text')
     .attr('y', 30)
@@ -115,7 +116,8 @@ function Chart(selector) {
     .text('Fertility (births per woman)');
 
   chart.gy = chart.svg.append('g')
-    .attr('class', 'y axis');
+    .attr('class', 'y axis')
+    .attr('aria-hidden', true);
 
   chart.gy.append('text')
     .attr('transform', 'rotate(-90)')
