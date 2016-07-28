@@ -65,19 +65,19 @@ function Chart(selector) {
 
   // SVG and MARGINS
 
-  var margin = {
+  chart.margin = {
     top: 15, right: 15, bottom: 40, left: 45
   };
 
-  chart.width = 600 - margin.left - margin.right;
-  chart.height = 400 - margin.top - margin.bottom;
+  chart.width = 600 - chart.margin.left - chart.margin.right;
+  chart.height = 400 - chart.margin.top - chart.margin.bottom;
 
   chart.svg = d3.select(selector)
     .append('svg')
-    .attr('width', chart.width + margin.left + margin.right)
-    .attr('height', chart.height + margin.top + margin.bottom)
+    .attr('width', chart.width + chart.margin.left + chart.margin.right)
+    .attr('height', chart.height + chart.margin.top + chart.margin.bottom)
     .append('g')
-    .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+    .attr('transform', 'translate(' + chart.margin.left + ',' + chart.margin.top + ')');
 
   // SCALES
 
@@ -99,16 +99,16 @@ function Chart(selector) {
 
   // AXES
 
-  var xAxis = d3.axisBottom()
+  chart.xAxis = d3.axisBottom()
     .scale(chart.x);
 
-  var yAxis = d3.axisLeft()
+  chart.yAxis = d3.axisLeft()
     .scale(chart.y);
 
   chart.svg.append('g')
     .attr('class', 'x axis')
     .attr('transform', 'translate(0,' + chart.height + ')')
-    .call(xAxis)
+    .call(chart.xAxis)
     .append('text')
     .attr('y', 30)
     .attr('x', chart.width)
@@ -119,7 +119,7 @@ function Chart(selector) {
 
   chart.svg.append('g')
     .attr('class', 'y axis')
-    .call(yAxis)
+    .call(chart.yAxis)
     .append('text')
     .attr('transform', 'rotate(-90)')
     .attr('dy', '.71em')
