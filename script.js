@@ -143,10 +143,16 @@ function Chart(selector) {
     .style('opacity', 0.2)
     .text(app.options.year);
 
-  chart.update();
+  chart.resize();
 }
 
 Chart.prototype = {
+  resize: function () {
+    var chart = this;
+
+    chart.update();
+  },
+
   update: function () {
     var chart = this;
 
