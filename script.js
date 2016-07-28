@@ -72,7 +72,9 @@ function Chart(selector) {
   chart.width = 600 - chart.margin.left - chart.margin.right;
   chart.height = 400 - chart.margin.top - chart.margin.bottom;
 
-  chart.svg = d3.select(selector)
+  chart.parentEl = d3.select(selector);
+
+  chart.svg = chart.parentEl
     .append('svg')
     .attr('width', chart.width + chart.margin.left + chart.margin.right)
     .attr('height', chart.height + chart.margin.top + chart.margin.bottom)
@@ -149,6 +151,13 @@ function Chart(selector) {
 Chart.prototype = {
   resize: function () {
     var chart = this;
+
+    var width = chart.parentEl.node().offsetWidth;
+
+    chart.width = width - chart.margin.left - chart.margin.right;
+    chart.height = 400 - chart.margin.top - chart.margin.bottom;
+
+    console.log(chart.width, chart.height)
 
     chart.update();
   },
