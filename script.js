@@ -48,7 +48,7 @@ app = {
       app.update();
     }
 
-    d3.interval(incrementYear, TRANSITION_DURATION);
+    // d3.interval(incrementYear, TRANSITION_DURATION);
   },
 
   resize: function () {
