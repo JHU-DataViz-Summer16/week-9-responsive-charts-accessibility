@@ -69,9 +69,6 @@ function Chart(selector) {
     top: 15, right: 15, bottom: 40, left: 45
   };
 
-  chart.width = 600 - chart.margin.left - chart.margin.right;
-  chart.height = 400 - chart.margin.top - chart.margin.bottom;
-
   chart.parentEl = d3.select(selector);
 
   chart.svg = chart.parentEl
