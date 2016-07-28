@@ -130,7 +130,11 @@ function Chart(selector) {
 
   // YEAR LABEL
 
-  chart.yearLabel = chart.svg.append('text')
+  var yearG = chart.svg.append('g');
+
+  yearG.append('title').text('Year:')
+
+  chart.yearLabel = yearG.append('text')
     .attr('class', 'year')
     .attr('dy', '.35em')
     .style('text-anchor', 'middle')
