@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Responsive Charts and Accessibility</title>
+  <!-- Bootstrap documentation: http://getbootstrap.com -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="header section">
+  <div class="container">
+    <h1>Responsive Charts and Accessibility</h1>
+  </div>
+</div>
+<div class="main section">
+  <div class="container">
+    <div class="introduction">
+      <p><b>Gapminder Foundation</b> is a non-profit venture registered in <a href="https://en.wikipedia.org/wiki/Stockholm,_Sweden">Stockholm, Sweden</a>, that promotes sustainable global development and achievement of the <a href="https://en.wikipedia.org/wiki/United_Nations_Millennium_Development_Goals">United Nations Millennium Development Goals</a> by increased use and understanding of statistics and other information about social, economic and environmental development at local, national and global levels.</p>
+      <p>The Foundation continued the development of the Trendalyzer software, which was acquired by Google in March 2006. The team of developers for Gapminder had joined Google in April 2007. The current version of Trendalyzer is Gapminder World, a web-service displaying time series of development statistics for all countries and many sub-national regions. Gapminder world uses <a href="https://developers.google.com/chart/interactive/docs/gallery/motionchart">"Google Motion Charts"</a> to power its graphics. <a href="https://en.wikipedia.org/wiki/Trendalyzer">Click here</a> to learn more about Trendalyzer.</p>
+      <p class="small">Source: <a href="https://en.wikipedia.org/wiki/Gapminder_Foundation">Wikipedia</a>
+    </div>
+    <div id="chart"></div>
+  </div>
+</div>
+<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
