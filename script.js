@@ -76,8 +76,6 @@ function Chart(selector) {
 
   chart.svg = chart.parentEl
     .append('svg')
-    .attr('width', chart.width + chart.margin.left + chart.margin.right)
-    .attr('height', chart.height + chart.margin.top + chart.margin.bottom)
     .append('g')
     .attr('transform', 'translate(' + chart.margin.left + ',' + chart.margin.top + ')');
 
@@ -157,7 +155,9 @@ Chart.prototype = {
     chart.width = width - chart.margin.left - chart.margin.right;
     chart.height = 400 - chart.margin.top - chart.margin.bottom;
 
-    console.log(chart.width, chart.height)
+    chart.parentEl.select('svg')
+      .attr('width', chart.width + chart.margin.left + chart.margin.right)
+      .attr('height', chart.height + chart.margin.top + chart.margin.bottom);
 
     chart.update();
   },
